@@ -69,15 +69,21 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 }
 .dd-item:hover { background: #fff8f3; }
 .dd-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: #222;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
 }
 .dd-item:hover .dd-label { color: #f60; }
 .dd-sub {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 11px;
   color: #aaa;
   margin-top: 1px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
 }
 .dd-group {
   padding: 0 6px;
@@ -88,17 +94,20 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   display: flex;
   align-items: center;
   gap: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 10.5px;
-  font-weight: 800;
+  font-weight: 700;
   color: #555;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   padding: 6px 4px 8px;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 4px;
+  line-height: 1.2;
 }
 .dd-item-sm {
   display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 12.5px;
   font-weight: 500;
   color: #444;
@@ -109,6 +118,8 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
 }
 .dd-item-sm:hover { background: #fff8f3; color: #f60; }
 /* overlay to close dropdowns on outside click */
@@ -135,11 +146,12 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   flex: 1;
 }
 .nav-link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #222;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   padding: 0 16px;
   height: 52px;
   display: flex;
@@ -150,6 +162,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   margin-bottom: -3px;
   transition: color 0.15s;
   gap: 4px;
+  line-height: 1.2;
 }
 .nav-link:hover { color: #f60; }
 .nav-link.active, .dd-open .nav-link { color: #f60; border-bottom-color: #f60; }
@@ -176,8 +189,9 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   flex: 1;
 }
 .sub-user {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: #f60;
   cursor: pointer;
   display: flex;
@@ -187,10 +201,16 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 .sub-sep { width: 1px; height: 16px; background: #ddd; }
 .sub-gear { cursor: pointer; opacity: 0.5; transition: opacity 0.15s; display:flex;align-items:center; }
 .sub-gear:hover { opacity: 0.9; }
-.sub-loc { font-size: 12px; color: #555; font-weight: 600; }
+.sub-loc {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 12px;
+  color: #555;
+  font-weight: 500;
+}
 .sub-ref-btn {
   background: #1a3c6e;
   color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 11.5px;
   font-weight: 600;
   padding: 4px 12px;
@@ -198,7 +218,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   cursor: pointer;
   white-space: nowrap;
   border: none;
-  font-family: Arial, sans-serif;
 }
 .sub-ref-btn span { color: #f7c948; }
 
@@ -1095,9 +1114,7 @@ function renderReportItems(tab){
   grid.innerHTML=items.map(function(item){
     var href = item.label === 'Account Statement' ? 'account_statement.html' : '#';
     var onclick = item.label === 'Account Statement' ? '' : 'onclick="return false;"';
-    return '<a href="'+href+'" '+onclick+' style="display:flex;align-items:center;padding:9px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+
-      '<span>'+item.label+'</span>'+
-    '</a>';
+    return '<a href="'+href+'" '+onclick+' class="dd-item"><div><div class="dd-label">'+item.label+'</div></div></a>';
   }).join('');
 }
 
@@ -1118,11 +1135,11 @@ function svRenderItems(tab){
         '</div>'+
         col.items.map(function(label){
           if (label === 'Live Help') {
-            return '<a href="#" onclick="openLiveHelpPopup(); return false;" style="display:block;padding:8px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+label+'</a>';
+            return '<a href="#" onclick="openLiveHelpPopup(); return false;" class="dd-item"><div><div class="dd-label">'+label+'</div></div></a>';
           } else {
             var href = label === 'Pending Orders' ? 'pending_orders.html' : '#';
             var onclick = label === 'Pending Orders' ? '' : 'onclick="return false;"';
-            return '<a href="'+href+'" '+onclick+' style="display:block;padding:8px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+label+'</a>';
+            return '<a href="'+href+'" '+onclick+' class="dd-item"><div><div class="dd-label">'+label+'</div></div></a>';
           }
         }).join('')+
       '</div>';
@@ -1134,9 +1151,7 @@ function svRenderItems(tab){
     grid.style.cssText='display:grid;grid-template-columns:repeat('+cols2+',1fr);gap:0;padding:8px 0 10px;';
     grid.innerHTML=items.map(function(item){
       var href = item.href || '#';
-      return '<a href="'+href+'" style="display:flex;align-items:center;padding:9px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+
-        '<span>'+item.label+'</span>'+
-      '</a>';
+      return '<a href="'+href+'" class="dd-item"><div><div class="dd-label">'+item.label+'</div></div></a>';
     }).join('');
   }
 }
