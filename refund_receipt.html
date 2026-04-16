@@ -69,15 +69,21 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 }
 .dd-item:hover { background: #fff8f3; }
 .dd-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: #222;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
 }
 .dd-item:hover .dd-label { color: #f60; }
 .dd-sub {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 11px;
   color: #aaa;
   margin-top: 1px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
 }
 .dd-group {
   padding: 0 6px;
@@ -88,17 +94,20 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   display: flex;
   align-items: center;
   gap: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 10.5px;
-  font-weight: 800;
+  font-weight: 700;
   color: #555;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   padding: 6px 4px 8px;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 4px;
+  line-height: 1.2;
 }
 .dd-item-sm {
   display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 12.5px;
   font-weight: 500;
   color: #444;
@@ -109,6 +118,8 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
 }
 .dd-item-sm:hover { background: #fff8f3; color: #f60; }
 /* overlay to close dropdowns on outside click */
@@ -135,11 +146,12 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   flex: 1;
 }
 .nav-link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #222;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   padding: 0 16px;
   height: 52px;
   display: flex;
@@ -150,6 +162,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   margin-bottom: -3px;
   transition: color 0.15s;
   gap: 4px;
+  line-height: 1.2;
 }
 .nav-link:hover { color: #f60; }
 .nav-link.active, .dd-open .nav-link { color: #f60; border-bottom-color: #f60; }
@@ -176,8 +189,9 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   flex: 1;
 }
 .sub-user {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: #f60;
   cursor: pointer;
   display: flex;
@@ -187,10 +201,11 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 .sub-sep { width: 1px; height: 16px; background: #ddd; }
 .sub-gear { cursor: pointer; opacity: 0.5; transition: opacity 0.15s; display:flex;align-items:center; }
 .sub-gear:hover { opacity: 0.9; }
-.sub-loc { font-size: 12px; color: #555; font-weight: 600; }
+.sub-loc { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; font-size: 12px; color: #555; font-weight: 500; }
 .sub-ref-btn {
   background: #1a3c6e;
   color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 11.5px;
   font-weight: 600;
   padding: 4px 12px;
@@ -198,7 +213,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   cursor: pointer;
   white-space: nowrap;
   border: none;
-  font-family: Arial, sans-serif;
 }
 .sub-ref-btn span { color: #f7c948; }
 
@@ -451,6 +465,23 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 .rpt-btn { display: flex; align-items: center; gap: 8px; padding: 9px 11px; border-radius: 6px; border: 1px solid #eee; background: #fff; font-size: 12.5px; font-weight: 600; color: #333; cursor: pointer; font-family: Arial, sans-serif; transition: border-color 0.15s, color 0.15s, background 0.15s; }
 .rpt-btn:hover { border-color: #f60; color: #f60; background: #fff8f3; }
 
+/* ── SLIDE-IN DRAWER ── */
+.drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.28); z-index: 499; }
+.drawer-overlay.open { display: block; }
+.side-drawer { display: none; position: fixed; top: 0; left: 0; bottom: 0; width: 320px; background: #fff; border-right: 1px solid #e0e0e0; z-index: 500; box-shadow: 4px 0 24px rgba(0,0,0,0.14); flex-direction: column; overflow-y: hidden; }
+.side-drawer.open { display: flex; }
+.drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 2px solid #f60; background: #fafafa; flex-shrink: 0; }
+.drawer-title { font-size: 13px; font-weight: 700; color: #222; text-transform: uppercase; letter-spacing: 0.5px; }
+.drawer-close { background: none; border: none; cursor: pointer; font-size: 20px; color: #888; padding: 2px 6px; border-radius: 4px; font-family: Arial, sans-serif; line-height: 1; }
+.drawer-close:hover { background: #f0f0f0; color: #333; }
+.drawer-section { padding: 10px 14px 4px; }
+.drawer-section-label { font-size: 11px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display:flex; align-items:center; gap:6px; }
+.drawer-sub-label { font-size: 10px; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.6px; margin: 10px 0 4px 4px; }
+.drawer-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; cursor: pointer; transition: background 0.12s; font-size: 13px; font-weight: 500; color: #444; text-decoration: none; }
+.drawer-item:hover { background: #fff4ec; color: #f60; }
+.drawer-sep { height: 1px; background: #f0f0f0; margin: 6px 14px; }.drawer-badge { margin-left: auto; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #f8d7da; color: #7a1f1f; }
+.drawer-sep { height: 1px; background: #f0f0f0; margin: 8px 16px; }
+
 /* ══ TRANSACTION TABS ══ */
 .tx-tab {
   position: relative;
@@ -507,9 +538,41 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 }
 .rpt-link:hover { color: #f60; text-decoration: underline; }
 
+/* ── RATE MODAL ── */
+@keyframes modalIn {
+  from { opacity:0; transform:scale(0.95) translateY(8px); }
+  to   { opacity:1; transform:scale(1)    translateY(0); }
+}
+
+/* ── DRAWER ── */
+.drawer-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.28); z-index:499; }
+.drawer-overlay.open { display:block; }
+.side-drawer { display:none; position:fixed; top:0; left:0; bottom:0; width:320px; background:#fff; border-right:1px solid #e0e0e0; z-index:500; box-shadow:4px 0 24px rgba(0,0,0,0.14); flex-direction:column; overflow-y:hidden; }
+.side-drawer.open { display:flex; }
+.drawer-header { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:3px solid #f60; flex-shrink:0; }
+.drawer-title { font-size:13px; font-weight:800; color:#222; text-transform:uppercase; letter-spacing:0.5px; }
+.drawer-close { background:none; border:none; font-size:18px; cursor:pointer; color:#888; padding:2px 6px; border-radius:4px; }
+.drawer-close:hover { background:#f5f5f5; }
+.drawer-section { padding:2px 10px; }
+.drawer-section-label {
+  font-size:12px; font-weight:800; color:#333; text-transform:uppercase;
+  letter-spacing:0.5px; display:flex; align-items:center; gap:8px;
+  padding:10px 8px; border-radius:7px; cursor:pointer; user-select:none;
+  transition:background 0.12s;
+}
+.drawer-section-label:hover { background:#f5f5f5; }
+.drawer-chev { margin-left:auto; transition:transform 0.2s; flex-shrink:0; }
+.drawer-section-label.open .drawer-chev { transform:rotate(180deg); }
+.drawer-section-body { display:none; padding-bottom:4px; }
+.drawer-section-body.open { display:block; }
+.drawer-sub-label { font-size:10px; font-weight:700; color:#bbb; text-transform:uppercase; letter-spacing:0.6px; margin:10px 0 3px 12px; }
+.drawer-item { display:flex; align-items:center; padding:7px 12px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:500; color:#444; text-decoration:none; }
+.drawer-item:hover { background:#fff4ec; color:#f60; }
+.drawer-sep { height:1px; background:#f0f0f0; margin:4px 10px; }
 </style>
 </head>
 <body>
+<div id="ddOverlay" onclick="closeAllDropdowns()"></div>
 
 <!-- ══════════════════ TOP NAV ══════════════════ -->
 <nav class="top-nav">
@@ -917,9 +980,7 @@ function renderReportItems(tab){
   grid.innerHTML=items.map(function(item){
     var href = item.label === 'Account Statement' ? 'account_statement.html' : '#';
     var onclick = item.label === 'Account Statement' ? '' : 'onclick="return false;"';
-    return '<a href="'+href+'" '+onclick+' style="display:flex;align-items:center;padding:9px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+
-      '<span>'+item.label+'</span>'+
-    '</a>';
+    return '<a href="'+href+'" '+onclick+' class="dd-item"><div><div class="dd-label">'+item.label+'</div></div></a>';
   }).join('');
 }
 
@@ -940,11 +1001,11 @@ function svRenderItems(tab){
         '</div>'+
         col.items.map(function(label){
           if (label === 'Live Help') {
-            return '<a href="#" onclick="openLiveHelpPopup(); return false;" style="display:block;padding:8px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+label+'</a>';
+            return '<a href="#" onclick="openLiveHelpPopup(); return false;" class="dd-item"><div><div class="dd-label">'+label+'</div></div></a>';
           } else {
             var href = label === 'Pending Orders' ? 'pending_orders.html' : '#';
             var onclick = label === 'Pending Orders' ? '' : 'onclick="return false;"';
-            return '<a href="'+href+'" '+onclick+' style="display:block;padding:8px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+label+'</a>';
+            return '<a href="'+href+'" '+onclick+' class="dd-item"><div><div class="dd-label">'+label+'</div></div></a>';
           }
         }).join('')+
       '</div>';
@@ -956,9 +1017,7 @@ function svRenderItems(tab){
     grid.style.cssText='display:grid;grid-template-columns:repeat('+cols2+',1fr);gap:0;padding:8px 0 10px;';
     grid.innerHTML=items.map(function(item){
       var href = item.href || '#';
-      return '<a href="'+href+'" style="display:flex;align-items:center;padding:9px 18px;font-size:13px;color:#444;text-decoration:none;transition:background 0.1s,color 0.1s;font-family:Arial,sans-serif;" onmouseover="this.style.background=\'#fff8f3\';this.style.color=\'#f60\'" onmouseout="this.style.background=\'\';this.style.color=\'#444\'">'+
-        '<span>'+item.label+'</span>'+
-      '</a>';
+      return '<a href="'+href+'" class="dd-item"><div><div class="dd-label">'+item.label+'</div></div></a>';
     }).join('');
   }
 }
