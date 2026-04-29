@@ -465,23 +465,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
 .rpt-btn { display: flex; align-items: center; gap: 8px; padding: 9px 11px; border-radius: 6px; border: 1px solid #eee; background: #fff; font-size: 12.5px; font-weight: 600; color: #333; cursor: pointer; font-family: Arial, sans-serif; transition: border-color 0.15s, color 0.15s, background 0.15s; }
 .rpt-btn:hover { border-color: #f60; color: #f60; background: #fff8f3; }
 
-/* ── SLIDE-IN DRAWER ── */
-.drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.28); z-index: 499; }
-.drawer-overlay.open { display: block; }
-.side-drawer { display: none; position: fixed; top: 0; left: 0; bottom: 0; width: 320px; background: #fff; border-right: 1px solid #e0e0e0; z-index: 500; box-shadow: 4px 0 24px rgba(0,0,0,0.14); flex-direction: column; overflow-y: hidden; }
-.side-drawer.open { display: flex; }
-.drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 2px solid #f60; background: #fafafa; flex-shrink: 0; }
-.drawer-title { font-size: 13px; font-weight: 700; color: #222; text-transform: uppercase; letter-spacing: 0.5px; }
-.drawer-close { background: none; border: none; cursor: pointer; font-size: 20px; color: #888; padding: 2px 6px; border-radius: 4px; font-family: Arial, sans-serif; line-height: 1; }
-.drawer-close:hover { background: #f0f0f0; color: #333; }
-.drawer-section { padding: 10px 14px 4px; }
-.drawer-section-label { font-size: 11px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display:flex; align-items:center; gap:6px; }
-.drawer-sub-label { font-size: 10px; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.6px; margin: 10px 0 4px 4px; }
-.drawer-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; cursor: pointer; transition: background 0.12s; font-size: 13px; font-weight: 500; color: #444; text-decoration: none; }
-.drawer-item:hover { background: #fff4ec; color: #f60; }
-.drawer-sep { height: 1px; background: #f0f0f0; margin: 6px 14px; }.drawer-badge { margin-left: auto; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #f8d7da; color: #7a1f1f; }
-.drawer-sep { height: 1px; background: #f0f0f0; margin: 8px 16px; }
-
 /* ══ TRANSACTION TABS ══ */
 .tx-tab {
   position: relative;
@@ -544,31 +527,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
   to   { opacity:1; transform:scale(1)    translateY(0); }
 }
 
-/* ── DRAWER ── */
-.drawer-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.28); z-index:499; }
-.drawer-overlay.open { display:block; }
-.side-drawer { display:none; position:fixed; top:0; left:0; bottom:0; width:320px; background:#fff; border-right:1px solid #e0e0e0; z-index:500; box-shadow:4px 0 24px rgba(0,0,0,0.14); flex-direction:column; overflow-y:hidden; }
-.side-drawer.open { display:flex; }
-.drawer-header { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:3px solid #f60; flex-shrink:0; }
-.drawer-title { font-size:13px; font-weight:800; color:#222; text-transform:uppercase; letter-spacing:0.5px; }
-.drawer-close { background:none; border:none; font-size:18px; cursor:pointer; color:#888; padding:2px 6px; border-radius:4px; }
-.drawer-close:hover { background:#f5f5f5; }
-.drawer-section { padding:2px 10px; }
-.drawer-section-label {
-  font-size:12px; font-weight:800; color:#333; text-transform:uppercase;
-  letter-spacing:0.5px; display:flex; align-items:center; gap:8px;
-  padding:10px 8px; border-radius:7px; cursor:pointer; user-select:none;
-  transition:background 0.12s;
-}
-.drawer-section-label:hover { background:#f5f5f5; }
-.drawer-chev { margin-left:auto; transition:transform 0.2s; flex-shrink:0; }
-.drawer-section-label.open .drawer-chev { transform:rotate(180deg); }
-.drawer-section-body { display:none; padding-bottom:4px; }
-.drawer-section-body.open { display:block; }
-.drawer-sub-label { font-size:10px; font-weight:700; color:#bbb; text-transform:uppercase; letter-spacing:0.6px; margin:10px 0 3px 12px; }
-.drawer-item { display:flex; align-items:center; padding:7px 12px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:500; color:#444; text-decoration:none; }
-.drawer-item:hover { background:#fff4ec; color:#f60; }
-.drawer-sep { height:1px; background:#f0f0f0; margin:4px 10px; }
 </style>
 </head>
 <body>
@@ -599,9 +557,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
           <div><div class="dd-label">Pay Order</div></div>
         </a>
         <a href="#" class="dd-item">
-          <div><div class="dd-label">Money Order</div></div>
-        </a>
-        <a href="#" class="dd-item">
           <div><div class="dd-label">Ria Pay</div></div>
         </a>
         <a href="#" class="dd-item">
@@ -613,16 +568,13 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
         <a href="#" class="dd-item">
           <div><div class="dd-label">Top Ups</div></div>
         </a>
-        <a href="#" class="dd-item">
-          <div><div class="dd-label">Check Cashing</div></div>
-        </a>
       </div>
     </div>
 
     <!-- Services Dropdown -->
     <div class="nav-dropdown" id="ddServices">
       <div class="nav-link" onclick="toggleDropdown('ddServices')">
-        Services
+        Resources
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="dropdown-panel" id="panelServices" style="min-width:680px;max-width:90vw;width:auto;padding:0;overflow:hidden;">
@@ -671,10 +623,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
             Bill Pay &amp; Top Ups
           </button>
-          <button onclick="rqSetTab('cc',this)" id="rqTab-cc" class="rq-tab">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-            Check Cashing
-          </button>
           <button onclick="rqSetTab('co',this)" id="rqTab-co" class="rq-tab">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Compliance
@@ -688,9 +636,14 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
     </div>
 
   </div>
+   
+  <!-- Search Icon -->
+  <button onclick="window.location.href='transaction_search.html'" style="background:none;border:none;cursor:pointer;padding:10px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background 0.15s;margin-right:12px;" onmouseover="this.style.background='#fff8f3'" onmouseout="this.style.background='none'">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f60" stroke-width="3"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+  </button>
 
   <!-- Credit Available & Amount to Pay -->
-  <div style="display:flex;align-items:center;gap:16px;margin-left:auto;margin-right:12px;flex-shrink:0;">
+  <div style="display:flex;align-items:center;gap:16px;margin-right:12px;flex-shrink:0;">
     <!-- Credit Available -->
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;">
       <div style="font-size:11px;font-weight:700;color:#444;white-space:nowrap;">
@@ -708,7 +661,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
     <!-- Amount to Pay -->
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;">
       <div style="font-size:11px;font-weight:700;color:#444;white-space:nowrap;">
-        Amount to Pay &nbsp;<span style="color:#dc2626;font-weight:800;background:#fef2f2;padding:3px 8px;border-radius:4px;border:1px solid #fecaca;font-size:13px;">425,350 USD</span>
+        Amount to Pay &nbsp;<a href="account_statement.html" style="color:#dc2626;font-weight:800;background:#fef2f2;padding:3px 8px;border-radius:4px;border:1px solid #fecaca;font-size:13px;text-decoration:none;transition:background 0.15s,color 0.15s;" onmouseover="this.style.background='#fee2e2';this.style.color='#b91c1c'" onmouseout="this.style.background='#fef2f2';this.style.color='#dc2626'">425,350 USD</a>
       </div>
     </div>
   </div>
