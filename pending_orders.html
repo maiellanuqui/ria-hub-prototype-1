@@ -314,9 +314,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
           <div><div class="dd-label">Pay Order</div></div>
         </a>
         <a href="#" class="dd-item">
-          <div><div class="dd-label">Money Order</div></div>
-        </a>
-        <a href="#" class="dd-item">
           <div><div class="dd-label">Ria Pay</div></div>
         </a>
         <a href="#" class="dd-item">
@@ -328,16 +325,13 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
         <a href="#" class="dd-item">
           <div><div class="dd-label">Top Ups</div></div>
         </a>
-        <a href="#" class="dd-item">
-          <div><div class="dd-label">Check Cashing</div></div>
-        </a>
       </div>
     </div>
 
     <!-- Services Dropdown -->
     <div class="nav-dropdown" id="ddServices">
       <div class="nav-link" onclick="toggleDropdown('ddServices')">
-        Services
+        Resources
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="dropdown-panel" id="panelServices" style="min-width:680px;max-width:90vw;width:auto;padding:0;overflow:hidden;">
@@ -386,10 +380,6 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
             Bill Pay &amp; Top Ups
           </button>
-          <button onclick="rqSetTab('cc',this)" id="rqTab-cc" class="rq-tab">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-            Check Cashing
-          </button>
           <button onclick="rqSetTab('co',this)" id="rqTab-co" class="rq-tab">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Compliance
@@ -403,9 +393,14 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
     </div>
 
   </div>
+   
+  <!-- Search Icon -->
+  <button onclick="window.location.href='transaction_search.html'" style="background:none;border:none;cursor:pointer;padding:10px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background 0.15s;margin-right:12px;" onmouseover="this.style.background='#fff8f3'" onmouseout="this.style.background='none'">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f60" stroke-width="3"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+  </button>
 
   <!-- Credit Available & Amount to Pay -->
-  <div style="display:flex;align-items:center;gap:16px;margin-left:auto;margin-right:12px;flex-shrink:0;">
+  <div style="display:flex;align-items:center;gap:16px;margin-right:12px;flex-shrink:0;">
     <!-- Credit Available -->
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;">
       <div style="font-size:11px;font-weight:700;color:#444;white-space:nowrap;">
@@ -423,7 +418,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; font-size: 14px; min
     <!-- Amount to Pay -->
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;">
       <div style="font-size:11px;font-weight:700;color:#444;white-space:nowrap;">
-        Amount to Pay &nbsp;<span style="color:#dc2626;font-weight:800;background:#fef2f2;padding:3px 8px;border-radius:4px;border:1px solid #fecaca;font-size:13px;">425,350 USD</span>
+        Amount to Pay &nbsp;<a href="account_statement.html" style="color:#dc2626;font-weight:800;background:#fef2f2;padding:3px 8px;border-radius:4px;border:1px solid #fecaca;font-size:13px;text-decoration:none;transition:background 0.15s,color 0.15s;" onmouseover="this.style.background='#fee2e2';this.style.color='#b91c1c'" onmouseout="this.style.background='#fef2f2';this.style.color='#dc2626'">425,350 USD</a>
       </div>
     </div>
   </div>
